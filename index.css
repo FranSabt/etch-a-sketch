@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(94, 95, 94);
+}
+
+.title{
+    padding: 1.5em;
+    text-align: center;
+    font-size: 3em;
+}
+
+.main{
+    display: flex;
+}
+
+.control-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em
+}
+
+.btn{
+    margin: 1em;
+    height: 5em;
+    width: 7em;
+    border-radius: 15px;
+    background-color: rgb(152, 155, 152);
+    transition: .3s;
+}
+
+.btn:hover{
+    transform: scale(1.2);
+}
