@@ -16,6 +16,7 @@ gridVal.oninput = function() {
 }
 
 gridVal.onchange = function() {
+    setZero();
     let z = this.value;
     console.log(z)
     document.getElementById("grid").style.gridTemplateColumns = `repeat(${z}, 1fr)`
@@ -32,6 +33,12 @@ gridVal.onchange = function() {
     }
 }
 
+const setZero = () => {
+    let element = document.getElementById("grid");
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
 
 /*
 gridVal.oninput = function() {
