@@ -33,18 +33,14 @@
     transform: scale(1.2);
 }
 
-.grid-container{
+.grid{
     height: 70vh;
     width: 50%;
     background-color: white;
-}
-.grid{
     display: grid;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
     }
 
 .box{
-    border: 2px solid gray;
-    background-color:rgb(7, 49, 7);
+    border: 1px solid rgb(0, 0, 0);
+    background-color: brown;
 }
