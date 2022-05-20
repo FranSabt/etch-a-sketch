@@ -22,13 +22,13 @@ gridVal.onchange = function() {
     document.getElementById("grid").style.gridTemplateColumns = `repeat(${z}, 1fr)`
     document.getElementById("grid").style.gridTemplateRows = `repeat(${z}, 1fr)`
 
-    for(let i = 1; i <= z; i++){
+    for(let i = 1; i <= (z * z) ; i++){
         console.log(i)
         const element = document.createElement("div");
         const newDiv = document.getElementById("grid");
         newDiv.appendChild(element).className = "box"
         newDiv.appendChild(element).textContent = `${i}`
-        //newDiv
+        
         
     }
 }
