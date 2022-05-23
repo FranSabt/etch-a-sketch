@@ -17,7 +17,7 @@
 .control-container{
     display: flex;
     flex-direction: column;
-    padding: 1.5em
+    padding: 1.5em;
 }
 
 .btn{
@@ -42,5 +42,5 @@
 
 .box{
     border: 1px solid rgb(0, 0, 0);
-    background-color: brown;
+    background-color: transparent
 }
