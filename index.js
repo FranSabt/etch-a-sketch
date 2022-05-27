@@ -69,12 +69,12 @@ window.onload = () =>{
 
 // Rainbow
 
-    // solo se está ejecutando en el default
+
     const rbColor = () => {
         return Math.floor(Math.random() * 16777216);
     }
 
-    boxes = document.getElementsByClassName('box'); //quizas un while solucione esto
+    boxes = document.getElementsByClassName('box');
     console.log(boxes); // 👉️ [div.box, div.box, div.box]
 
     // ✅ addEventListener to all boxes
@@ -86,5 +86,21 @@ window.onload = () =>{
             box.style.backgroundColor = `#${hexStr}`
         });
     }
+
+    // Rainbow end
     
+    // Color Selector
+    /*
+    const colorselection =  document.getElementById("colorpicker")
+
+    let color = colorselection.input = function () {
+        let color = this.value;
+        return color;
+    }*/
+
+    colorPicker.addEventListener("input", actualizarPrimero, false);
+
 }
+
+
+
