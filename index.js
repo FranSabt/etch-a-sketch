@@ -67,11 +67,12 @@ window.onload = () =>{
 
     def();
 
-// Rainbow
+//  RAINBOW
+/*
 
 
     const rbColor = () => {
-        return Math.floor(Math.random() * 16777216);
+        return Math.floor(Math.random() * 16777215);
     }
 
     boxes = document.getElementsByClassName('box');
@@ -86,21 +87,41 @@ window.onload = () =>{
             box.style.backgroundColor = `#${hexStr}`
         });
     }
-
-    // Rainbow end
+*/
+    // RAINBOW END
     
-    // Color Selector
-    /*
+
+
+
+    // COLOR SELECTOR
+
     const colorselection =  document.getElementById("colorpicker")
 
-    let color = colorselection.input = function () {
-        let color = this.value;
-        return color;
-    }*/
+    let colorSel = null;
 
-    colorPicker.addEventListener("input", actualizarPrimero, false);
+    colorselection.oninput= function () {
+        colorSel= this.value;
+        console.log("color is: " + colorSel)
+    }
 
+        
+    //colorPicker.addEventListener("input", actualizarPrimero, false);
+
+
+    boxes = document.getElementsByClassName('box');
+    console.log(boxes); // 👉️ [div.box, div.box, div.box]
+
+    // ✅ addEventListener to all boxes
+    for (const box of boxes) {
+        box.addEventListener('click', function onClick() {
+            //color = rbColor();
+            //let hexStr = color.toString(16);
+            console.log("aun es "+ colorSel);
+            box.style.backgroundColor = `${colorSel}`
+        });
+    }
+
+    // COLOR SELECTOR END
 }
-
 
 
