@@ -1,9 +1,6 @@
-window.onload = () =>{
+
 // grid
 
-
-    let defaultSize = 16;
-    let size;
     let boxes
 
     const gridVal = document.getElementById("grid-control");
@@ -22,22 +19,11 @@ window.onload = () =>{
         document.getElementById("grid").style.gridTemplateRows = `repeat(${z}, 1fr)`
 
         for(let i = 1; i <= (z * z) ; i++){
-            console.log(i)
+            //console.log(i)
             const element = document.createElement("div");
             const newDiv = document.getElementById("grid");
             newDiv.appendChild(element).className = "box"
             newDiv.appendChild(element).attributes = 'onclick="colorR()"'
-        }
-        boxes = document.getElementsByClassName('box'); //quizas un while solucione esto
-        console.log(boxes); // 👉️ [div.box, div.box, div.box]
-        
-        for (const box of boxes) {
-            box.addEventListener('click', function onClick() {
-                color = rbColor();
-                let hexStr = color.toString(16);
-                console.log(hexStr);
-                box.style.backgroundColor = `#${hexStr}`
-            });
         }
     }
 
@@ -48,7 +34,7 @@ window.onload = () =>{
         document.getElementById("grid").style.gridTemplateRows = `repeat(${z}, 1fr)`
 
         for(let i = 1; i <= (z * z) ; i++){
-            console.log(i)
+            //console.log(i)
             const element = document.createElement("div");
             const newDiv = document.getElementById("grid");
             newDiv.appendChild(element).className = "box"
@@ -67,61 +53,93 @@ window.onload = () =>{
 
     def();
 
-//  RAINBOW
-/*
 
 
+    const colorGrid = (btn) => {
+        if (btn === 'color'){
+            colorPicked()
+        }
+        else if (btn === 'rainbow'){
+            rainbow()
+        }
+        else if (btn === 'eraser'){
+            eraser();
+        }
+        else if (btn === 'kill'){ // i know, bad practice, but i jus wanna have some fun xP
+            killEmHall();
+        }
+        else {
+            console.log('hello');
+        }
+    }
+
+
+
+//  RAINBOW //
+
+
+const rainbow = () =>{
     const rbColor = () => {
         return Math.floor(Math.random() * 16777215);
     }
-
     boxes = document.getElementsByClassName('box');
-    console.log(boxes); // 👉️ [div.box, div.box, div.box]
+    //console.log(boxes); // 👉️ [div.box, div.box, div.box]
 
     // ✅ addEventListener to all boxes
     for (const box of boxes) {
         box.addEventListener('click', function onClick() {
             color = rbColor();
             let hexStr = color.toString(16);
-            console.log(hexStr);
+            //console.log(hexStr);
             box.style.backgroundColor = `#${hexStr}`
         });
     }
-*/
-    // RAINBOW END
+}   
+ // RAINBOW END //
     
 
 
 
-    // COLOR SELECTOR
-
+    // COLOR SELECTOR //
+const colorPicked = ()  =>{
     const colorselection =  document.getElementById("colorpicker")
 
     let colorSel = null;
 
     colorselection.oninput= function () {
         colorSel= this.value;
-        console.log("color is: " + colorSel)
+        //console.log("color is: " + colorSel)
     }
-
-        
-    //colorPicker.addEventListener("input", actualizarPrimero, false);
-
-
     boxes = document.getElementsByClassName('box');
-    console.log(boxes); // 👉️ [div.box, div.box, div.box]
-
-    // ✅ addEventListener to all boxes
     for (const box of boxes) {
         box.addEventListener('click', function onClick() {
-            //color = rbColor();
-            //let hexStr = color.toString(16);
-            console.log("aun es "+ colorSel);
             box.style.backgroundColor = `${colorSel}`
         });
     }
-
-    // COLOR SELECTOR END
 }
+
+    // COLOR SELECTOR END //
+
+    //ERASER //
+const eraser = () => {
+    boxes = document.getElementsByClassName('box');
+    for (const box of boxes) {
+        box.addEventListener('click', function onClick() {
+            box.style.backgroundColor = `#ffffff`
+        });
+    }
+}
+    //ERASER  END//
+
+const killEmHall = () =>{
+    boxes = document.getElementsByClassName('box');
+    for (const box of boxes) {
+        box.style.backgroundColor = `#ffffff`
+    }
+}
+
+
+
+
 
 

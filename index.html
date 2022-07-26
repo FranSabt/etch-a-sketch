@@ -11,11 +11,11 @@
     <h1 class="title">Etch-A-Sketch</h1>
     <main class="main">
         <div class="control-container">
-            <button class="btn" id="color-mode">
+            <button class="btn" id="color-mode" onclick="colorGrid('color')">
                 <input type="color" id="colorpicker" value="#FFFFFF">Color</button>
-            <button class="btn" id="rainbow-mode">Rainbow</button>
-            <button class="btn" id="eraser">Eraser</button>
-            <button class="btn" id="reset">Reset</button>
+            <button class="btn" id="rainbow-mode" onclick="colorGrid('rainbow')">Rainbow</button>
+            <button class="btn" id="eraser" onclick="colorGrid('eraser')">Eraser</button>
+            <button class="btn" id="reset" onclick="colorGrid('kill')">Reset</button>
             <div class="slidecontainer">
                 <div class="grid-size" id="grid-size"></div>
                 <input type="range" min="4" max="64" value="16" class="grid-control" id="grid-control">
